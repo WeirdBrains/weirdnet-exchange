@@ -2,6 +2,19 @@
 
 Running notes for [weirdnet-exchange](https://github.com/WeirdBrains/weirdnet-exchange), newest first.
 
+## 2026-11-25: released v0.1.0
+
+- What changed: the first release, [0.1.0 on crates.io](https://crates.io/crates/weirdnet-exchange/0.1.0),
+  with the API described in the entry below. Tagged
+  [v0.1.0](https://github.com/WeirdBrains/weirdnet-exchange/releases/tag/v0.1.0).
+- Commits: `1b8908f` (`release: v0.1.0`, made by `scripts/weirdnet_release.py`) and this entry.
+- Checks: CI passed on `1869681` (Linux checks, macOS and Windows tests with all features);
+  the release script's checks (fmt, clippy with all features, tests with all features, docs)
+  passed before tagging; `cargo publish` verified the package; crates.io lists 0.1.0.
+- Not tested: as in the entry below. docs.rs builds the documentation from the upload.
+- Left: nothing for 0.1.0.
+- Next: venue adapters in their own crates, built on these traits.
+
 ## 2026-11-25: initial crate, unreleased
 
 - What changed: the first implementation. Exact decimal `Price` and `Qty`; `Market`,
@@ -27,7 +40,7 @@ Running notes for [weirdnet-exchange](https://github.com/WeirdBrains/weirdnet-ex
   vault-backed credentials with a file-backed vault or the OS keychain (tests use an in-memory
   vault); hubs served over weirdnet-net to remote subscribers; Windows and macOS until the first
   CI run.
-- Left: CI on GitHub; the 0.1.0 release.
+- Left: CI on GitHub; the 0.1.0 release (both done, see above).
 - Next: venue adapters in their own crates, built on these traits.
 
 ---
