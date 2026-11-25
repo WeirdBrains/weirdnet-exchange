@@ -1,0 +1,39 @@
+[package]
+name = "weirdnet-exchange"
+version = "0.0.0"
+edition = "2024"
+rust-version = "1.99"
+description = "Weirdnet exchange types and traits: instruments, exact decimal prices and sizes, orders with a state machine, fills, balances, positions, market data, an async adapter trait, cost and rate-limit helpers, and an in-memory paper exchange."
+authors = ["Weird Brains LLC"]
+license = "BSD-3-Clause"
+repository = "https://github.com/WeirdBrains/weirdnet-exchange"
+documentation = "https://docs.rs/weirdnet-exchange"
+readme = "README.md"
+keywords = ["exchange", "trading", "orders", "market-data", "weirdnet"]
+categories = ["finance", "asynchronous"]
+include = ["src/**", "docs/**", "README.md", "CHANGELOG.md", "LICENSE"]
+
+[features]
+default = []
+# VaultSecret: credentials from weirdnet-vault, scoped per account and venue, Test or Live.
+vault = ["dep:weirdnet-vault"]
+# MarketHubs: market data as weirdnet-service Hub topics.
+service = ["dep:weirdnet-service"]
+
+[dependencies]
+async-trait = "0.1"
+futures = "0.3"
+rust_decimal = { version = "1.43", features = ["serde"] }
+serde = { version = "1", features = ["derive"] }
+thiserror = "2"
+tokio = { version = "1", features = ["sync", "time", "rt"] }
+zeroize = "1"
+weirdnet-vault = { version = "0.1", optional = true, default-features = false, features = ["vendored-openssl"] }
+weirdnet-service = { version = "0.1", optional = true, default-features = false }
+
+[dev-dependencies]
+serde_json = "1"
+tokio = { version = "1", features = ["sync", "time", "rt", "rt-multi-thread", "macros", "test-util"] }
+
+[package.metadata.docs.rs]
+all-features = true
