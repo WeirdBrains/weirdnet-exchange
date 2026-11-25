@@ -1,6 +1,6 @@
 [package]
 name = "weirdnet-exchange"
-version = "0.0.0"
+version = "0.1.0"
 edition = "2024"
 rust-version = "1.99"
 description = "Weirdnet exchange types and traits: instruments, exact decimal prices and sizes, orders with a state machine, fills, balances, positions, market data, an async adapter trait, cost and rate-limit helpers, and an in-memory paper exchange."
